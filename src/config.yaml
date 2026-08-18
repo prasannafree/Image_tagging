@@ -1,0 +1,22 @@
+data:
+  train_csv: "data/processed/image_tagging/train_tags.csv"
+  val_csv: "data/processed/image_tagging/val_tags.csv"
+  test_csv: "data/processed/image_tagging/test_tags.csv"
+  train_img_dir: "data/raw/source_a_synthetic/warehouse_detection_dataset/raw/train/images"
+  val_img_dir: "data/raw/source_a_synthetic/warehouse_detection_dataset/raw/val/images"
+  test_img_dir: "data/raw/source_a_synthetic/warehouse_detection_dataset/raw/test/images"
+
+
+model:
+  architecture: "mobilenet_v3"      # Options: resnet50, mobilenet_v3, efficientnet_b0, custom
+
+training:
+  epochs: 15
+  batch_size: 32
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  num_workers: 4                    # Increase if you have more CPU cores for faster data loading
+  
+logging:
+  tensorboard_dir: "runs/warehouse_tagging"
+  checkpoint_dir: "checkpoints"
